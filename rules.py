@@ -1,4 +1,5 @@
 import random
+import json
 
 
 def game():
@@ -69,6 +70,8 @@ def game():
             print("\n Ножницы режут бумагу.\n Бумага заворачивает камень.\n Камень давит ящерицу.\n Ящерица травит Спока.\n Спок ломает ножницы.\n Ножницы отрезают голову ящерице.\n Ящерица ест бумагу.\n На бумаге улики против Спока.\n Спок испаряет камень.\n Камень, разумеется, затупляет ножницы.\n")
         if pc == "7":
             print(f"{player_name}, Вы выиграли {player_wincount} раз!")
+            win_voc = {player_name: player_wincount}
+            open("win_list.txt", "w").write(json.dumps(win_voc))
             break
 
 
